@@ -1,26 +1,34 @@
-import { transactions } from '../../data/transactions';
-
+import { transactions } from '../../utils/transactions';
+// import { Aside } from '../../components/User/User.styles';
+import {
+  TransactionHistory,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+} from '../../components/Transactions/Transactions.styles';
 function Transactions() {
   return (
-    <table class="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
+    <TransactionHistory>
+      <Thead>
+        <Tr>
+          <Th>Type</Th>
+          <Th>Amount</Th>
+          <Th>Currency</Th>
+        </Tr>
+      </Thead>
 
-      <tbody>
+      <Tbody>
         {transactions.map(({ id, type, amount, currency }) => (
-          <tr>
-            <td>{type}</td>
-            <td>{amount}</td>
-            <td>{currency}</td>
-          </tr>
+          <Tr key={id}>
+            <Td>{type}</Td>
+            <Td>{amount}</Td>
+            <Td>{currency}</Td>
+          </Tr>
         ))}
-      </tbody>
-    </table>
+      </Tbody>
+    </TransactionHistory>
   );
 }
 export default Transactions;

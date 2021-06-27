@@ -1,17 +1,22 @@
-import { friendsList } from '../../data/friends';
+import { friendsList } from '../../utils/friends';
+import { FriendsList, Item, Status, Avatar, Name } from './Frends.styles';
+import { Aside } from '../../components/User/User.styles';
 
 function Friends() {
   return (
-    <ul class="friend-list">
-      {friendsList.map(({ avatar, name, isOnline }) => (
-        <li class="item">
-          <span class="status">{isOnline}</span>
-          <img class="avatar" src={avatar} alt={name} width="48" />
+    <Aside>
+      <FriendsList>
+        {friendsList.map(({ avatar, name, isOnline }) => (
+          <Item key={name}>
+            <Status isOnline={isOnline}></Status>
+            <Avatar src={avatar} alt={name} width="48" />
 
-          <p class="name">{name}</p>
-        </li>
-      ))}
-    </ul>
+            <Name>{name}</Name>
+          </Item>
+        ))}
+      </FriendsList>
+    </Aside>
   );
 }
+
 export default Friends;

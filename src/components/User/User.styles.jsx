@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 export const Aside = styled.aside`
+  width: 400px;
   background-color: #caf5d2;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 `;
 export const Profile = styled.div`
-  width: 400px;
   padding: 20px;
   background-color: #ebf3f3;
 `;
@@ -55,14 +56,15 @@ export const Status = styled.ul`
   /* width: 120px;
   height: 120px; */
   display: grid;
-  grid-template-columns: 100px 100px 100px;
+  grid-template-columns: 1fr 1fr 1fr;
 `;
 export const StatusList = styled.li`
   display: grid;
   text-align: center;
   background-color: #ffffff;
-  margin: 1px;
+  /* margin: 1px; */
   padding: 10px;
+  border: thick double #32a1ce;
 `;
 export const Labele = styled.span`
   font-size: 16px;
