@@ -25,7 +25,6 @@ export const Tbody = styled.tbody`
   border: 1px solid black;
 `;
 export const Td = styled.td`
-  /* background-color: #f1d4ce; */
   font-size: 14px;
   border: 1px solid black;
   text-align: center;

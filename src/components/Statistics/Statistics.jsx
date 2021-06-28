@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { statisticalData } from '../../utils/statistical-data';
 import { Aside, Labele } from '../../components/User/User.styles';
 import {
@@ -7,13 +8,11 @@ import {
   StatItem,
   Percentage,
 } from '../../components/Statistics/Statistics.styles';
-// function Color() {
-//   const colorArray = ['#E74C3C', '#8E44AD', '#3498DB', '#27AE60', '#F39C12'];
-//   return{statisticalData.map(({ id }) => (
-//           `${colorArray[Number(id.replace(/[^0-9]/g, '')) % 5]}`
-//         ))}
 
-// }
+function getRandomColor() {
+  let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  return randomColor;
+}
 function Statistical() {
   return (
     <Aside>
@@ -21,7 +20,7 @@ function Statistical() {
 
       <StatList>
         {statisticalData.map(({ id, label, percentage }) => (
-          <StatItem key={id}>
+          <StatItem key={id} style={{ backgroundColor: getRandomColor() }}>
             <Labele>{label}</Labele>
             <Percentage>{percentage}%</Percentage>{' '}
           </StatItem>
@@ -30,4 +29,5 @@ function Statistical() {
     </Aside>
   );
 }
+
 export default Statistical;
